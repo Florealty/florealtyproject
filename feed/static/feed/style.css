@@ -1,0 +1,206 @@
+body {
+
+    font-family:'Inter', sans-serif;
+    background: url("/static/images/florealtyinteriors.png") no-repeat center center fixed;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(202, 199, 247);
+    background-blend-mode:normal ;
+    color: #fdf7f7;
+}
+
+.form-container .container{
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    color: #000;
+
+}
+
+h1, h2 {
+    text-align: center;
+    margin-top: 1rem;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 0.5em;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-box {
+    background-color: rgba(93, 138, 251, 0.6);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeInSlide 1.5s ease-in-out forwards;
+    opacity: 0; /* start hidden until animation runs */
+}
+
+
+.welcome-box h2 {
+    animation: fadeInSlide 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.welcome-box a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #00197e;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.welcome-box a:hover {
+    background-color: #ff9900;
+}
+
+.feed-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+} 
+
+.feed-card:hover {
+    transform: scale(1.02);
+    background-color: #eafaff;
+}
+
+
+.feed-title {
+    font-size: 1.5rem;
+    color: #003366;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.feed-timestamp {
+    font-size: 0.8rem;
+    color: #777;
+    font-style: italic;
+}
+
+.feed-content {
+    margin-bottom: 1rem;
+    color: #000;
+    line-height: 1.6;
+}
+
+.feed-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.fa-pencil { color: #007bff; }
+.fa-trash { color: #dc3545; }
+.fa-eye   { color: #28a745; }
+
+button {
+    padding: 0.5em 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #121212;
+}
+
+.feed-author {
+    font-size: 0.8rem;
+    color: #777;
+    font-style: italic;
+}
+
+.unauthorized-container {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.unauthorized-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.unauthorized-box a {
+    display: inline-block;
+    margin-top: 20px;
+    color: white;
+    background: #3b82f6;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.unauthorized-box a:hover {
+    background: #2563eb;
+}

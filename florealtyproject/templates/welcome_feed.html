@@ -1,0 +1,21 @@
+{% extends "base_layout.html" %}
+
+{% block body_content%}
+    <div class="welcome-box">
+        <h2 class="page-title">Welcome to Florealtyinteriors Page!, Click on the Link below to view my post</h3>
+        {% if user.is_authenticated %}
+            <p>Hello, {{ user.username }}!</p>
+            <a href="{% url 'feed_list' %}">View My Posts</a><br>
+            <form method= "POST"  action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+            
+            
+        {% else %}
+            <p>Click below to log in and see the latest posts.</p>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="{% static 'feed/style.css' %}"/>
+    <title>FLO REALTY</title>
+</head>
+<body> 
+   <div class ="form-container">
+     <h4><Click Here/h4>Click Here
+     <a href = "{% url 'create_feed' %}"> New Post </a>
+     or Go
+     <a href = "{% url 'welcome_feed' %}"> Back</a> 
+   </div>
+    
+    <div class="container">
+        {% for feed in feeds %}
+        <div class="feed-card">
+            <p class="feed-title">{{ feed.title }}</p>
+            <p class="feed-content">{{ feed.content }}</p>
+            <div>
+                <p class="feed-timestamp">{{ feed.published_date }}</p>
+                <div class="feed-actions">
+                <a href="{% url 's_feed' feed.id %}">
+                    <span class="feed-view">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </span>
+                </a>
+            
+                {% if feed.user == request.user %}
+                  <a href="{% url 'edit_feed' feed.id %}">
+                      <span class="feed-edit">
+                         <i class="fa fa-pencil" aria-hidden="true"></i>
+                       </span>
+                   </a>
+                  <a href="{% url 'delete_feed' feed.id %}">
+                     <span class="feed-delete">
+                         <i class="fa fa-trash" aria-hidden="true"></i>
+                      </span>
+                   </a>
+               {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <p class="feed-author">By: {{ feed.user.username }}</p>
+ 
+    </div>
+
+
+</body>
+
+</html>
